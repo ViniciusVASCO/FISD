@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leis de Newton - Simuladores Interativos</title>
+    <meta name="description" content="Explore as Leis de Newton através de simuladores interativos e apresentações educativas">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/componentes.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation Menu -->
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-content">
+                <div class="menu-header">
+                    <h2>Menu de Navegação</h2>
+                    <button id="close-menu" class="close-btn">&times;</button>
+                </div>
+                
+                <div class="menu-sections">
+                    <div class="menu-section">
+                        <h3>Simuladores</h3>
+                        <a href="simulador1.html" class="menu-link">
+                            <i class="fas fa-play"></i>
+                            1ª Lei - Inércia
+                        </a>
+                        <a href="simulador3.html" class="menu-link">
+                            <i class="fas fa-play"></i>
+                            3ª Lei - Ação e Reação
+                        </a>
+                    </div>
+
+                    <div class="menu-section">
+                        <h3>Atividades</h3>
+                        <a href="quizzes.html" class="menu-link">
+                            <i class="fas fa-question-circle"></i>
+                            Quizzes
+                        </a>
+                    </div>
+
+                    <div class="menu-section">
+                        <h3><i class="fas fa-eye"></i> Acessibilidade</h3>
+                        <button id="toggle-contrast" class="menu-button">
+                            <i class="fas fa-palette"></i>
+                            <span id="contrast-text">Ativar Alto Contraste</span>
+                        </button>
+                        <button id="change-font-size" class="menu-button">
+                            <i class="fas fa-font"></i>
+                            <span id="font-size-text">Fonte: Normal</span>
+                        </button>
+                    </div>
+
+                    <div class="menu-section">
+                        <h3><i class="fas fa-volume-up"></i> Audiovisual</h3>
+                        <button id="toggle-sound" class="menu-button">
+                            <i id="sound-icon" class="fas fa-volume-up"></i>
+                            <span id="sound-text">Som Ativado</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-container">
+            <!-- Header -->
+            <header class="header">
+                <button id="menu-btn" class="menu-toggle" aria-label="Abrir menu de navegação">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-content">
+                    <h1>Leis de Newton</h1>
+                    <p>Explore os fundamentos da mecânica clássica através de apresentações interativas</p>
+                </div>
+            </header>
+
+            <!-- Slide Presentation -->
+            <div class="container">
+                <div class="presentation-card">
+                    <div class="slide-controls">
+                        <button id="prev-slide" class="slide-btn" aria-label="Slide anterior">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="next-slide" class="slide-btn" aria-label="Próximo slide">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="slide-indicators">
+                        <button class="slide-indicator active" data-slide="0" aria-label="Ir para slide 1"></button>
+                        <button class="slide-indicator" data-slide="1" aria-label="Ir para slide 2"></button>
+                    </div>
+
+                    <div class="slide-content">
+                        <div class="slide active" data-slide="0">
+                            <h2>1ª Lei de Newton - Lei da Inércia</h2>
+                            <p class="slide-description">
+                                Um corpo em repouso tende a permanecer em repouso, e um corpo em movimento tende a permanecer em movimento, a menos que uma força externa atue sobre ele.
+                            </p>
+                            <div class="slide-example">
+                                <p><strong>Exemplo:</strong> Quando você está em um carro e ele freia bruscamente, seu corpo continua se movendo para frente devido à inércia.</p>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="1">
+                            <h2>3ª Lei de Newton - Ação e Reação</h2>
+                            <p class="slide-description">
+                                Para toda ação, há sempre uma reação oposta e de igual intensidade.
+                            </p>
+                            <div class="slide-example">
+                                <p><strong>Exemplo:</strong> Quando você caminha, empurra o chão para trás e o chão empurra você para frente com a mesma força.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/main.js"></script>
+</body>
+</html>

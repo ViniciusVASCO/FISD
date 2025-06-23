@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brincadeiras Educativas - Leis de Newton</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/componentes.css">
+    <link rel="stylesheet" href="CSS/simulador.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="games-app">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="header-content">
+                <h1>Brincadeiras Educativas</h1>
+                <p>Aprenda as Leis de Newton brincando!</p>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Games Selection -->
+            <div id="games-selection" class="games-grid">
+                <div class="game-card" data-game="inertia-drag">
+                    <div class="game-icon" style="background: #3b82f6;">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <h3>Arraste o Objeto</h3>
+                    <p>Demonstre a inércia arrastando objetos com diferentes massas</p>
+                    <div class="game-meta">
+                        <span class="game-law">1ª Lei - Inércia</span>
+                        <button class="btn btn-primary">Jogar</button>
+                    </div>
+                </div>
+
+                <div class="game-card" data-game="balloon-rocket">
+                    <div class="game-icon" style="background: #ef4444;">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Foguete de Balão</h3>
+                    <p>Simule ação e reação com balões que se movem</p>
+                    <div class="game-meta">
+                        <span class="game-law">3ª Lei - Ação e Reação</span>
+                        <button class="btn btn-danger">Jogar</button>
+                    </div>
+                </div>
+
+                <div class="game-card" data-game="memory-laws">
+                    <div class="game-icon" style="background: #9333ea;">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Jogo da Memória</h3>
+                    <p>Encontre os pares relacionados às Leis de Newton</p>
+                    <div class="game-meta">
+                        <span class="game-law">Todas as Leis</span>
+                        <button class="btn" style="background: #9333ea; color: white;">Jogar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Container -->
+            <div id="game-container" class="card hidden">
+                <div class="card-header">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h2 id="game-title" class="card-title">Jogo Atual</h2>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button id="restart-game" class="btn btn-secondary">
+                                <i class="fas fa-redo"></i>
+                                Reiniciar
+                            </button>
+                            <button id="back-to-games" class="btn btn-secondary">
+                                Voltar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div id="game-content">
+                        <!-- Game content will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/brincadeiras.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Leis de Newton</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/componentes.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="quiz-app">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="header-content">
+                <h1>Quiz - Leis de Newton</h1>
+                <p>Teste seus conhecimentos sobre as Leis de Newton</p>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="card quiz-container">
+                <!-- Quiz Progress -->
+                <div id="quiz-progress" class="card-header">
+                    <div class="quiz-info">
+                        <h2 id="question-counter">Pergunta 1 de 5</h2>
+                        <div id="score-display">Pontuação: 0/0</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill" style="width: 20%"></div>
+                    </div>
+                </div>
+
+                <!-- Quiz Content -->
+                <div id="quiz-content" class="card-content">
+                    <div class="question-container">
+                        <h3 id="question-text">O que afirma a 1ª Lei de Newton?</h3>
+                        <div id="answers-container" class="answers-grid">
+                            <!-- Answers will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="quiz-actions">
+                        <button id="next-question" class="btn btn-primary" disabled>
+                            Próxima Pergunta
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Results -->
+                <div id="quiz-results" class="card-content hidden">
+                    <div class="results-container">
+                        <div id="results-emoji" class="results-emoji">🏆</div>
+                        <h2>Quiz Finalizado!</h2>
+                        <p id="final-score" class="final-score">Sua pontuação: 5/5</p>
+                        <p id="results-message" class="results-message">
+                            Perfeito! Você domina as Leis de Newton!
+                        </p>
+                        
+                        <div class="results-actions">
+                            <button id="restart-quiz" class="btn btn-primary">
+                                <i class="fas fa-redo"></i>
+                                Tentar Novamente
+                            </button>
+                            <a href="index.html" class="btn btn-secondary">
+                                Voltar ao Início
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quizs.js"></script>
+</body>
+</html>
