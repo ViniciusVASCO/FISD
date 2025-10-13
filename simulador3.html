@@ -1,150 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador da 3ª Lei de Newton - Ação e Reação</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/componentes.css">
-    <link rel="stylesheet" href="CSS/simulador.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador da 3ª Lei de Newton - Ação e Reação</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/componentes.css">
+  <link rel="stylesheet" href="CSS/simulador.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="simulator-app">
-        <!-- Header -->
-        <header class="header">
-            <a href="index.html" class="btn btn-secondary">
-                <i class="fas fa-arrow-left"></i>
-            </a>
-            <div class="header-content">
-                <h1>Simulador da 3ª Lei de Newton - Ação e Reação</h1>
-                <p>Explore como as forças de ação e reação funcionam durante colisões</p>
+  <div id="simulator-app">
+    <!-- Header -->
+    <header class="header">
+      <a href="index.html" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+      <div class="header-content">
+        <h1>Simulador da 3ª Lei de Newton - Ação e Reação</h1>
+        <p>Veja como as forças de ação e reação funcionam durante uma colisão</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="simulator-layout">
+        <!-- Área de Simulação -->
+        <div class="simulation-section">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Colisão de Objetos</h2>
+              <p class="card-description">Observe como as forças de ação e reação atuam entre os objetos</p>
             </div>
-        </header>
-
-        <div class="container">
-            <div class="simulator-layout">
-                <!-- Simulation Area -->
-                <div class="simulation-section">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title">Colisão de Objetos</h2>
-                            <p class="card-description">
-                                Veja como as forças de ação e reação funcionam durante uma colisão
-                            </p>
-                        </div>
-                        <div class="card-content">
-                            <!-- Simulation Track -->
-                            <div id="collision-track" class="simulation-track">
-                                <div class="reference-lines">
-                                    <div class="reference-line"></div>
-                                    <div class="reference-line"></div>
-                                    <div class="reference-line"></div>
-                                    <div class="reference-line"></div>
-                                    <div class="reference-line"></div>
-                                    <div class="reference-line"></div>
-                                    <div class="reference-line"></div>
-                                    <div class="reference-line"></div>
-                                    <div class="reference-line"></div>
-                                    <div class="reference-line"></div>
-                                </div>
-                                
-                                <!-- Ball 1 -->
-                                <div id="ball1" class="collision-ball ball1"></div>
-                                
-                                <!-- Ball 2 -->
-                                <div id="ball2" class="collision-ball ball2"></div>
-                                
-                                <!-- Force indicators -->
-                                <div id="force1" class="collision-force hidden">F = 0.0N →</div>
-                                <div id="force2" class="collision-force hidden">← F = 0.0N</div>
-                            </div>
-
-                            <!-- Real-time Information -->
-                            <div class="collision-info-grid">
-                                <div class="collision-info-section">
-                                    <h4>Objeto 1</h4>
-                                    <div class="info-card">
-                                        <p>Velocidade: <span id="ball1-velocity">3.00</span> m/s</p>
-                                        <p>Massa: <span id="ball1-mass">1.0</span> kg</p>
-                                        <p>Momento: <span id="ball1-momentum">3.00</span> kg⋅m/s</p>
-                                    </div>
-                                </div>
-                                <div class="collision-info-section">
-                                    <h4>Objeto 2</h4>
-                                    <div class="info-card">
-                                        <p>Velocidade: <span id="ball2-velocity">-2.00</span> m/s</p>
-                                        <p>Massa: <span id="ball2-mass">1.0</span> kg</p>
-                                        <p>Momento: <span id="ball2-momentum">-2.00</span> kg⋅m/s</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Controls -->
-                            <div class="controls">
-                                <button id="start-collision" class="btn btn-success">
-                                    <i class="fas fa-play"></i>
-                                    Iniciar Colisão
-                                </button>
-                                <button id="reset-collision" class="btn btn-secondary">
-                                    <i class="fas fa-redo"></i>
-                                    Reset
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            <div class="card-content">
+              <!-- Pista de colisão -->
+              <div id="collision-track" class="simulation-track">
+                <div class="reference-lines">
+                  <!-- Linhas de referência -->
+                  <div class="reference-line"></div>
+                  <div class="reference-line"></div>
+                  <div class="reference-line"></div>
+                  <div class="reference-line"></div>
+                  <div class="reference-line"></div>
+                  <div class="reference-line"></div>
+                  <div class="reference-line"></div>
+                  <div class="reference-line"></div>
+                  <div class="reference-line"></div>
+                  <div class="reference-line"></div>
                 </div>
 
-                <!-- Controls and Information -->
-                <div class="controls-section">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Configurações</h3>
-                        </div>
-                        <div class="card-content">
-                            <div class="slider-container">
-                                <label class="slider-label">
-                                    Massa do Objeto 1: <span id="mass1-value">1.0</span> kg
-                                </label>
-                                <input type="range" id="mass1-slider" class="slider" 
-                                       min="0.5" max="3" step="0.1" value="1.0">
-                            </div>
-                            
-                            <div class="slider-container">
-                                <label class="slider-label">
-                                    Massa do Objeto 2: <span id="mass2-value">1.0</span> kg
-                                </label>
-                                <input type="range" id="mass2-slider" class="slider" 
-                                       min="0.5" max="3" step="0.1" value="1.0">
-                            </div>
-                        </div>
-                    </div>
+                <!-- Bolas -->
+                <div id="ball1" class="ball blue">1.0</div>
+                <div id="ball2" class="ball green">1.0</div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">3ª Lei de Newton</h3>
-                        </div>
-                        <div class="card-content">
-                            <p class="law-description">
-                                <strong>Lei da Ação e Reação:</strong> Para toda ação há sempre uma reação oposta e de igual intensidade.
-                            </p>
-                            <div class="law-points">
-                                <p>• As forças sempre aparecem em pares</p>
-                                <p>• Mesma intensidade, direções opostas</p>
-                                <p>• Atuam em objetos diferentes</p>
-                                <p>• Conservação do momento linear</p>
-                            </div>
-                            
-                            <div class="momentum-display">
-                                <strong>Momento total:</strong> <span id="total-momentum">1.00</span> kg⋅m/s
-                            </div>
-                        </div>
-                    </div>
+                <!-- Força durante colisão -->
+                <div id="force1" class="force-indicator hidden"></div>
+                <div id="force2" class="force-indicator hidden"></div>
+              </div>
+
+              <!-- Informações em tempo real -->
+              <div class="info-grid">
+                <div class="info-card">
+                  <h4>Objeto 1</h4>
+                  <p>Velocidade: <span id="vel1">0.00</span> m/s</p>
+                  <p>Massa: <span id="mass1">1.0</span> kg</p>
+                  <p>Momento: <span id="mom1">0.00</span> kg⋅m/s</p>
                 </div>
+                <div class="info-card">
+                  <h4>Objeto 2</h4>
+                  <p>Velocidade: <span id="vel2">0.00</span> m/s</p>
+                  <p>Massa: <span id="mass2">1.0</span> kg</p>
+                  <p>Momento: <span id="mom2">0.00</span> kg⋅m/s</p>
+                </div>
+              </div>
+
+              <!-- Controles -->
+              <div class="controls">
+                <button id="start" class="btn btn-success">
+                  <i class="fas fa-play"></i> Iniciar
+                </button>
+                <button id="reset" class="btn btn-secondary">
+                  <i class="fas fa-redo"></i> Reset
+                </button>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
 
-    <script src="js/simulator-terceira-lei.js"></script>
+        <!-- Coluna lateral -->
+        <div class="controls-section">
+          <!-- Configurações -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Configurações</h3>
+            </div>
+            <div class="card-content">
+              <label>Massa do Objeto 1: <span id="mass1-value">1.0</span> kg</label>
+              <input type="range" id="slider1" min="0.5" max="3" step="0.1" value="1.0">
+              
+              <label>Massa do Objeto 2: <span id="mass2-value">1.0</span> kg</label>
+              <input type="range" id="slider2" min="0.5" max="3" step="0.1" value="1.0">
+            </div>
+          </div>
+
+          <!-- Lei da 3ª Newton -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">3ª Lei de Newton</h3>
+            </div>
+            <div class="card-content">
+              <p><strong>Lei da Ação e Reação:</strong> Para toda ação há sempre uma reação oposta e de igual intensidade.</p>
+              <ul>
+                <li>As forças sempre aparecem em pares</li>
+                <li>Mesma intensidade, direções opostas</li>
+                <li>Atuam em objetos diferentes</li>
+                <li>Conservação do momento linear</li>
+              </ul>
+              <div class="total-momentum">
+                <strong>Momento total:</strong> <span id="total-momentum">0.00</span> kg⋅m/s
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/terceiralei.js"></script>
 </body>
 </html>

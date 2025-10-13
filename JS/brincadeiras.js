@@ -1,5 +1,3 @@
-// Educational Games JavaScript
-
 class EducationalGames {
     constructor() {
         this.currentGame = null;
